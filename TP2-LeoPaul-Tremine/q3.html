@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q3</title>
+</head>
+<body>
+<h2>Question 3 :</h2>
+<div class="block">
+    <img src="img/hero.jpg" onclick="youAreBig(this)" class="img1" style="width: 49%"  alt="hero"/>
+    <img src="img/hero2.jpg" onclick="youAreBig(this)" class="img2" style="width: 49%" alt="hero2"/>
+</div>
+</body>
+</html>
+<script>
+    let img1 = document.getElementsByClassName("img1")[0];
+    let img2 = document.getElementsByClassName("img2")[0];
+    let max1 = img1.clientWidth;
+    let max2 = img2.clientWidth;
+    function youAreBig(img){
+        let width1 = img1.clientWidth;
+        let width2 = img2.clientWidth;
+        if (img.className === 'img1' && width1 <= max1) {
+            img1.style.width = (width1 * 1.2) + "px";
+            img2.style.width = (width2 * 0.8) + "px";
+        }
+        if (img.className === 'img2' && width2 <= max2) {
+            img2.style.width = (width2 * 1.2) + "px";
+            img1.style.width = (width1 * 0.8) + "px";
+        }
+    }
+</script>

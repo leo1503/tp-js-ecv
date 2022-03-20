@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q2</title>
+</head>
+<body>
+<h2>Question 2 :</h2>
+<select id="maListe" size="4" style = "width: 200px; height: 100px">
+    <option onclick="youAreTheFirst()" >Paris</option>
+    <option onclick="youAreTheFirst()" >Orleans</option>
+    <option onclick="youAreTheFirst()" >Blois</option>
+    <option onclick="youAreTheFirst()" >Salbris</option>
+</select><br/>
+</body>
+</html>
+<script>
+    var liste = document.querySelector('#maListe');
+    var options = liste.getElementsByTagName('option');
+    var getItem = function (index) {
+        return options[index !== undefined ? index : liste.selectedIndex];
+    };
+
+    function youAreTheFirst () {
+        let item = getItem();
+        let first = getItem(0);
+        liste.removeChild(item);
+        liste.insertBefore(item, first);
+    }
+</script>

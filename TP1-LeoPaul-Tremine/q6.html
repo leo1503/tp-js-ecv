@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q6</title>
+</head>
+<body>
+<h2>Question 6 :</h2>
+<ul id="maListe">
+    <li>Toto</li>
+    <li>Tata</li>
+    <li>Titi</li>
+    <li>Tutu</li>
+</ul>
+</body>
+</html>
+<script>
+    let li = document.createElement('li');
+    let content = document.createTextNode('Tete');
+    li.appendChild(content);
+    liste = document.getElementById("maListe");
+    liste.children[1].replaceWith(li);
+</script>

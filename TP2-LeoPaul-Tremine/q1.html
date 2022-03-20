@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q1</title>
+</head>
+<body>
+<h1>Question 1 : </h1>
+<br />
+<img onclick="rotateToRight(this)" class="sono" src="img/sono.jpg" alt="sono">
+</body>
+</html>
+<script>
+    let degree = 0;
+    function rotateToRight(img){
+        degree += 90;
+        img.style.transform = "rotate("+ degree +"deg)";
+    }
+</script>

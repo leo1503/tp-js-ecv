@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q4</title>
+</head>
+<body>
+<h2>Question 4 :</h2>
+<ul>
+
+</ul>
+</body>
+</html>
+<script>
+    let keys=[];
+    document.onkeypress = function(e) {
+        let get = window.event?event:e;
+        let key = get.keyCode?get.keyCode:get.charCode;
+        key = String.fromCharCode(key);
+        keys+=key;
+        if (keys.length > 20){
+            let allLi = document.querySelectorAll('li');
+            allLi[0].remove();
+        }
+        let li = document.createElement('li');
+        let content = document.createTextNode(key);
+        li.appendChild(content);
+        let ul = document.querySelector('ul');
+        ul.appendChild(li);
+    }
+
+
+</script>

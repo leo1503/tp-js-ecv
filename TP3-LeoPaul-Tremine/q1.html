@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q1</title>
+</head>
+<body>
+<h2>Question 1 : </h2>
+<div onclick="changeColor(this)" style="background: black; width: 100px; height: 100px">
+Carre 1
+</div><br>
+<div onclick="changeColor(this)" style="background: black; width: 100px; height: 100px">
+Carre 2
+</div><br>
+<div onclick="changeColor(this)" style="background: black; width: 100px; height: 100px">
+Carre 3
+</div><br>
+</body>
+</html>
+<script>
+    function changeColor(carre){
+        if (carre.style.backgroundColor === 'black'){
+            carre.style.backgroundColor = 'red';
+        }
+        else {
+            carre.style.backgroundColor = 'black';
+        }
+    }
+</script>

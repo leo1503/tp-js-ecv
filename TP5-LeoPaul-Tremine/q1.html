@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q1</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function getHashTags(string){
+        return string.split(' ').sort(function(a,b){return b.length - a.length;}).slice(0,3).map(function(e) {return '#' + e});
+    }
+    console.log(getHashTags('je prends un avocado dans la mezzanine'));
+</script>

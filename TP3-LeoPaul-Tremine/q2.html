@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q2</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let alea = Math.random() * (15 - 5) + 5;
+    let madiv;
+
+    for (let i = 0; i < alea; i++) {
+        madiv = document.createElement('div');
+        madiv.style.height = '50px';
+        madiv.style.width = '100%';
+        let randomColor = (Math.floor(Math.random()*0xFFFFFF)).toString(16);
+        madiv.style.backgroundColor = "#" + randomColor;
+        document.body.appendChild(madiv);
+    }
+</script>

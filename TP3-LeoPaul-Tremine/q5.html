@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q5</title>
+</head>
+<body>
+<h2>Question 5 : </h2>
+<p>Window height: <span id="height"></span> px</p>
+<p>Window width: <span id="width"></span> px</p>
+</body>
+</html>
+<script>
+    const heightOutput = document.querySelector('#height');
+    const widthOutput = document.querySelector('#width');
+
+    function reportWindowSize() {
+    heightOutput.textContent = window.innerHeight;
+    widthOutput.textContent = window.innerWidth;
+    }
+
+    window.onresize = reportWindowSize;
+</script>

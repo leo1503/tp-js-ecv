@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q6</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function findLongestWord(str){
+        return str.split(' ').sort(function(a,b){return b.length - a.length;}).slice(0,1);
+    }
+    console.log(findLongestWord('je prends un avocado dans la mezzanine'));
+    console.log(findLongestWord("le chemin le plus court n'est pas toujours le meilleur"));
+</script>

@@ -8,3 +8,13 @@
 
 </body>
 </html>
+<script>
+    function pascalCase(str){
+        let chaine = str.split(" ");
+        for (let i =0; i<chaine.length; i++){
+            chaine[i] = chaine[i][0].toUpperCase() + chaine[i].slice(1)
+        }
+        return chaine.join(" ").replace(/ /g, "");
+    }
+    console.log(pascalCase("hello je am robert"));
+</script>

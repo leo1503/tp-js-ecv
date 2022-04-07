@@ -10,10 +10,11 @@
 </html>
 <script>
     function capitalize(str){
-        let chaine = str.split("");
-        chaine.forEach(word => word[0].toUpperCase()
-        )
-        return first[0].toUpperCase() + first.slice(1).join("");
+       let chaine = str.split(" ");
+       for (let i =0; i<chaine.length; i++){
+           chaine[i] = chaine[i][0].toUpperCase() + chaine[i].slice(1)
+       }
+        return chaine.join(" ");
     }
     console.log(capitalize("hello je am robert"));
 </script>

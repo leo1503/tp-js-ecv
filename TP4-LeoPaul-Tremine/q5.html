@@ -8,3 +8,23 @@
 
 </body>
 </html>
+<script>
+    function palindrome(str){
+        let bool;
+        const mot = str.toLowerCase();
+        const mot_reverse = [...mot].reverse().join('');
+
+        if (mot === mot_reverse) {
+            bool = true;
+            console.log(mot + ' est un palindrome');
+        }
+
+        else {
+            bool =false;
+            console.log(mot + ' n\'est pas un palindrome');
+        }
+        return bool;
+    }
+    console.log(palindrome('kayak'));
+    console.log(palindrome('banane'));
+</script>

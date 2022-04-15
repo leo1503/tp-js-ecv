@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q1</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let person = {
+        name : "Helen",
+        surname : "Yu",
+        gender : "F",
+        dob : "1/12/1950",
+    };
+
+    function getSurnameCode(word) {
+        const vowels = word.match(/[aeiou]/gi);
+        const consonants = word.match(/[^aeiou]/gi);
+        if (consonants.length >= 3){
+            return consonants.slice(0,3).join("").toUpperCase();
+        }
+        else if (word.length >= 3){
+            const count = 3 - consonants.length;
+            for (let i = 0; i !== count;i++ ){
+                consonants.push(vowels[i]);
+            }
+            return consonants.slice(0,3).join("").toUpperCase();
+        }
+        else{
+            for(let i = 0; word.length < 3; i++){
+                let add = "X";
+                word = word.toUpperCase() + add;
+            }
+            return word;
+        }
+    }
+
+    function getNameCode(word) {
+        const vowels = word.match(/[aeiou]/gi);
+        let consonants = word.match(/[^aeiou]/gi);
+        if (consonants.length === 3){
+            return consonants.slice(0,3).join("").toUpperCase();
+        }
+        else if (consonants.length >= 3){
+            const count = consonants.length;
+            let letter = [];
+            letter[0] = consonants[0];
+            for (let i = count-2; i !== count; i++ ){
+                letter.push(consonants[i]);
+            }
+            return letter.slice(0,3).join("").toUpperCase();
+        }
+        else if (word.length <3){
+            for(let i = 0; word.length < 3; i++){
+            let add = "X";
+            word = word.toUpperCase() + add;
+        }
+        return word;
+        }
+        else{
+            const count = 3 - consonants.length;
+            for (let i = 0; i !== count;i++ ){
+                consonants.push(vowels[i]);
+            }
+            return consonants.slice(0,3).join("").toUpperCase();
+        }
+    }
+
+    // Format de la date de naissance
+    function birth(int){
+        return int.slice(-2);
+    }
+    // Format du mois
+    const mounth = {
+        1 : "A",
+        2 : "B",
+        3 : "C",
+        4 : "D",
+        5 : "E",
+        6 : "H",
+        7 : "L",
+        8 : "M",
+        9 : "P",
+        10 : "R",
+        11 : "S",
+        12 : "T"
+    }
+    function letterMounth(int){
+        let number = int.split("/").slice(1,2).join();
+        return mounth[number];
+    }
+    // format Genre
+    function genre(person){
+        // Si garcon
+        if(person.gender === "M"){
+            let number = person.dob.split("/").slice(0,1).join();
+            if(number.length === 1){
+                return 0 + number;
+            }
+            else{
+                return number;
+            }
+        }
+        // Si fille
+        else if(person.gender === "F"){
+            let number = person.dob.split("/").slice(0,1).join();
+            return Number(number) + 40;
+        }
+    }
+    // Result
+    function getFiscalCode(){
+        let surname = getSurnameCode(person.surname);
+        let name = getNameCode(person.name);
+        let year = birth(person.dob);
+        let mounth = letterMounth(person.dob);
+        let gender = genre(person.gender);
+        return surname + name + year +  mounth + gender;
+    }
+    console.log(getFiscalCode());
+
+</script>
